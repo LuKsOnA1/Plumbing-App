@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@await Component.InvokeAsync("About");
+@await Component.InvokeAsync("Service");
+@await Component.InvokeAsync("Portfolio");
+@await Component.InvokeAsync("Testimonal");
+
+
+<section id="cta" class="cta">
+    <div class="container">
+
+        <div class="text-center">
+            <h3> Call To Action </h3>
+            <p> Welcome to our leading Plumbing Company in all over Georgia. Please do not hesitate to get in touch with us. </p>
+            <a class="cta-btn" href="#contact">Contact Us</a>
+        </div>
+
+    </div>
+</section>
+
+@await Component.InvokeAsync("Team");
+@await Component.InvokeAsync("Contact");

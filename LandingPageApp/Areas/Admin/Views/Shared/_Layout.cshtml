@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Admin Panel</title>
+    <meta content="Administration Panel For Plumbing Website" name="description">
+    <meta content="Plumber, Plumbing, Refurishment" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/NiceAdmin/assets/img/Icon.png" rel="icon">
+    <link href="~/NiceAdmin/assets/img/Icon.png rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/NiceAdmin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/NiceAdmin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/NiceAdmin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/NiceAdmin/assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="~/NiceAdmin/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="~/NiceAdmin/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/NiceAdmin/assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/NiceAdmin/assets/css/style.css" rel="stylesheet">
+
+ 
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="#" class="logo d-flex align-items-center">
+                <img src="~/NiceAdmin/assets/img/Icon.png" alt="">
+                <span class="d-none d-lg-block">@User.Identity!.Name</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex allign-items-center">
+                <li> <a class="btn btn-outline-info me-2" asp-area="" asp-controller="Home" asp-action="Index"> <i class="bi bi-house-door"></i> </a> </li>
+                <li> <a class="btn btn-outline-warning me-2" asp-area="User" asp-controller="Dashboard" asp-action="Index"> <i class="bi bi-person-bounding-box"></i> </a> </li>
+                <li> <a class="btn btn-outline-danger me-2" asp-area="User" asp-controller="AuthenticationUser" asp-action="LogOut"> <i class="bi bi-box-arrow-right"></i> </a> </li>
+            </ul>
+        </nav>
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
+                    <i class="bi bi-grid"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="About" asp-action="GetAboutList">
+                    <i class="bi bi-building-fill"></i>
+                    <span>About</span>
+                </a>
+            </li><!-- End About Section -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="HomePage" asp-action="GetHomePageList">
+                    <i class="bi bi-house"></i>
+                    <span>Home Page</span>
+                </a>
+            </li><!-- End Home Page Section -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Service" asp-action="GetServiceList">
+                    <i class="bi bi-sliders2-vertical"></i>
+                    <span>Services</span>
+                </a>
+            </li><!-- End Services Section -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Team" asp-action="GetTeamList">
+                    <i class="bi bi-people-fill"></i>
+                    <span>Team</span>
+                </a>
+            </li><!-- End Team Section -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Testimonal" asp-action="GetTestimonalList">
+                    <i class="bi bi-chat-right-dots"></i>
+                    <span>Testimonals</span>
+                </a>
+            </li><!-- End Testimonals Section -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Category" asp-action="GetCategoryList">
+                    <i class="bi bi-tags"></i>
+                    <span>Categories</span>
+                </a>
+            </li><!-- End Categories Section -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Portfolio" asp-action="GetPortfolioList">
+                    <i class="bi bi-image"></i>
+                    <span>Portfolio</span>
+                </a>
+            </li><!-- End Portfolio Section -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Contact" asp-action="GetContactList">
+                    <i class="bi bi-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link collapsed" asp-area="Admin" asp-controller="Admin" asp-action="GetUserList">
+                    <i class="bi bi-person"></i>
+                    <span>User List</span>
+                </a>
+            </li><!-- End Contact Section -->
+
+
+            <!-- End Blank Page Nav -->
+
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        @RenderBody()
+
+    </main><!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="~/NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="~/NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="~/NiceAdmin/assets/vendor/quill/quill.min.js"></script>
+    <script src="~/NiceAdmin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="~/NiceAdmin/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="~/NiceAdmin/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/NiceAdmin/assets/js/main.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
+</body>
+
+</html>
