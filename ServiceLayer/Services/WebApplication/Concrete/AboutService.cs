@@ -107,6 +107,13 @@ namespace ServiceLayer.Services.WebApplication.Concrete
                 request.FileType = imageResult.FileType!;
             }
 
+            if(request.Photo == null)
+            {
+                request.FileName = oldAbout.FileName;
+                request.FileType = oldAbout.FileType;
+            }
+            
+
             var about = _mapper.Map<About>(request);
             _repository.UpdateEntity(about);
             var result = await _unitOfWork.CommitAsync();

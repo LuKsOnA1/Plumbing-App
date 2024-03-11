@@ -38,7 +38,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a asp-area="User" asp-controller="Dashboard" asp-action="Index" class="logo d-flex align-items-center">
                 <img src="~/NiceAdmin/assets/img/User_Icon.png" alt="User Icon">
                 <span class="d-none d-lg-block">@User.Identity!.Name</span>
             </a>
